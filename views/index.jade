@@ -1,2 +1,15 @@
-h1= title
-p Welcome to #{title}
+header
+  pre
+    |   __ _                       _      
+    |  / _(_) __ _ _ __   ___   __| | ___ 
+    | | |_| |/ _` | '_ \\ / _ \\ / _` |/ _ \\
+    | |  _| | (_| | | | | (_) | (_| |  __/
+    | |_| |_|\\__, |_| |_|\\___/ \\__,_|\\___|
+    |        |___/                        
+  p An ASCII art web service powered by figlet and node.js
+form#figForm
+  input#stringField(type="text", size="80", name="figInput")
+  input#button(type="submit", value="figlet", name="submitButton")
+
+pre#outputArea
+script(src='/javascripts/fignode-client.js')
