@@ -5,13 +5,14 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , figlet = require('./figlet_process')
+  , figlet_service = require('./figlet_service').figlet_service;
 
 var app = module.exports = express.createServer();
 
 // Configuration
 
 app.configure(function(){
+  app.use(express.logger({ format: ':method :url' }));
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.bodyParser());
@@ -31,8 +32,8 @@ app.configure('production', function(){
 
 // Routes
 
+app.post('/', figlet_service);
 app.get('/', routes.index);
-//app.post('/', routes.figletService);
 
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
