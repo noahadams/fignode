@@ -24,3 +24,4 @@ $('#figForm').submit(function(event) {
   } 
   );
 });
+
