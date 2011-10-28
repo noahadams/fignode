@@ -6,3 +6,5 @@
            |___/ 
 
 A quick and dirty node.js project to write a needless web service that brings figlet to the world.
+
+This is a learning exercise for myself and not intended to be consumed seriously.
